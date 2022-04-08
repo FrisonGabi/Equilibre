@@ -1,0 +1,24 @@
+body {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans';
+    background-color:rgba(0,118,110,0.15);
+}  
+
+.rec-arrow {
+    display: none;
+}
+
+.rec-dot { 
+    box-shadow: 0 0 1px 3px rgba(0,118,110) !important;
+    background-color: rgba(0,118,110,0.6) !important;
+}
+
+
+.jhmYzC {
+    background-color: transparent !important;
+}
+
+.rec.rec-arrow {
+    border-radius: 0;
+}
