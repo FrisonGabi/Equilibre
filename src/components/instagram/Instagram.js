@@ -97,7 +97,7 @@ const Instagram = () => {
         <Container > 
          <Carousel 
           breakPoints={breakPoints}
-          enableAutoPlay autoPlaySpeed={3500}
+          enableAutoPlay autoPlaySpeed={3000}
          >
             {publicaciones.map(p => (
               <Card key={p.id} >

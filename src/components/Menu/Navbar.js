@@ -126,7 +126,7 @@ const Navbar = () => {
                         <A href="#servicios">Servicios</A>
                     </Li>
                     <Li>
-                        <A href="contacto">Contacto</A>
+                        <A href="#contacto">Contacto</A>
                     </Li>
                 </Ul>
             </Nav>
