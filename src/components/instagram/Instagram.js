@@ -27,6 +27,10 @@ const DivP = styled.div`
     opacity:1;  
     
   }
+  @media (max-width:340px) {
+        width:100%;
+        
+    }
 `
 
 const DivImg = styled.div`
@@ -43,6 +47,10 @@ const DivImg = styled.div`
   &:hover{
     cursor:pointer;
   }
+  @media (max-width:340px) {
+        width:100%;
+        background-size:cover;
+    }
 `
 
 const Card = styled.div` 
@@ -52,17 +60,23 @@ const Card = styled.div`
   padding:6px;
   border-radius:5px;
   box-shadow: 2px 5px 10px 2px rgba(0,0,0,0.4);
-  
+  @media (max-width:340px) {
+        width:100%;
+        
+    }
 `
 
 const Container = styled.aside`
   width: 80%;
   margin: auto;
   display:flex;
+  margin-top:70px;
   @media (max-width:820px) {
         width:100%;
         margin: auto;
+        margin-top:70px;
     }
+
 `
 
 const url = `https://graph.instagram.com/me/media?fields=id,media_type,media_url,caption,permalink

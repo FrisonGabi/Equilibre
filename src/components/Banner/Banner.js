@@ -20,6 +20,10 @@ const Container = styled.div`
         background-position:80% ;
         margin-top:0;
     }
+    @media (max-width:340px) {
+       display:none;
+        
+    }
 `
 const Presentacion = styled.div`
    @media (max-width:820px) {
@@ -50,7 +54,7 @@ const P = styled.p`
 
 const Banner = () => {
     return(
-        <Container>
+        <Container >
             <Presentacion>               
                 <Info>
                     <Img src="images/logo.png"/>                   

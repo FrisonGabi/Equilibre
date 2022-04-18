@@ -7,14 +7,16 @@ const Container = styled.section`
     display:flex;
     flex-direction:column;
     justify-content:center;
-    margin-top:40px;
+    margin-top:70px;
     align-items:center;
-
+    @media (max-width:340px) {
+        width:100%;
+        
+    }
 `
 const ContainerCard = styled.div`
     display:flex;
     gap:15px;
-    
     flex-wrap:wrap;
     justify-content:center;
     @media (max-width:800px) {
@@ -44,7 +46,7 @@ const Card = styled.div`
         height: 250px;
         object-fit:cover;
         border-radius:6px 6px 0 0;
-        box-shadow: 0 5px 5px 0 rgba(0,0,0,0.2);
+        box-shadow: 0 1px 1px 0 rgba(0,0,0,0.2);
     }
     &>p {
         padding:10px;
@@ -70,7 +72,7 @@ const Button = styled.a`
 
 const Contacto = () => {
     return(
-        <Container>
+        <Container id="contacto">
             <ContainerCard >
                 <Card id="turno">
                     <img alt="nati" src="images/NatiEmi.jpg"/>
@@ -95,7 +97,7 @@ const Contacto = () => {
                     <Button href="https://wa.me/5493515924669?text=Hola,%20me%20gustaria%20agendar%20un%20turno" target="_blank">Saca tu turno!</Button>
                 </Card>
             </ContainerCard>
-            <Map/>
+            
         </Container>
     )
 }

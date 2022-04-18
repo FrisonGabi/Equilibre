@@ -2,6 +2,8 @@ import styled from "styled-components"
 import { useState } from "react";
 import { FaBars } from 'react-icons/fa';
 import { FaTimes } from "react-icons/fa"
+import {Link, animateScroll} from "react-scroll"
+
 //import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 
 const Header = styled.header`
@@ -9,10 +11,13 @@ const Header = styled.header`
     width:100%;
     top: 0;
     z-index:100;
+    color:#fff;
+    text-decoration:none;
+    font-size:19px;
+    letter-spacing: 1px;
 `
 
 const Nav = styled.nav`
-
     display:flex;
     align-items:center;
     justify-content:end;
@@ -33,6 +38,9 @@ const Li = styled.li`
     margin: 0 30px;
     position:relative;
     list-style:none;
+    &>Span {
+        cursor: pointer;
+    }
 
     &:before {
         content:"";
@@ -50,23 +58,16 @@ const Li = styled.li`
     }
 
 `
-const A = styled.a`
-    color:#fff;
-    text-decoration:none;
-    font-size:19px;
-    letter-spacing: 1px;
+const Span = styled.span`
 
-    transition: 0.5s ease-out;
-    &:hover {
-        color:rgb(52,200,200);
-    }
+
 `
 
 const NavM = styled.nav`
     background-color:rgb(52,179,161);
     width:100%;
     position:relative;
-    z-index:200;
+    z-index:99999;
     height: ${({menu}) => (menu ? "50vh" : "0")};
     overflow:hidden;
     transition: height 0.3s ease-in;
@@ -75,7 +76,10 @@ const NavM = styled.nav`
     @media (min-width:820px) {
         display:none;
     }
-    
+    @media (max-width:340px) {
+        height: ${({menu}) => (menu ? "60vh" : "0")};
+        
+    }
 `
 const UlM = styled.ul`
     display:flex;
@@ -84,12 +88,14 @@ const UlM = styled.ul`
     gap:70px;
     margin-top:50px;
     height:100%;
-
+    list-style:none;
  
 `
 const LiM = styled.li`
-
-    list-style:none;
+    &>Span {
+        cursor: pointer;
+    }
+    
 `
 
 const I = styled.div`
@@ -113,20 +119,28 @@ const I = styled.div`
 const Navbar = () => {
     const [menu, setMenu] = useState(false);
     return(
-        <Header>
-            <Nav>                
+        <Header > 
+            <Nav >                
                 <Ul>
                     <Li>
-                        <A href="#home">Home</A>
+                        <Span onClick={() => animateScroll.scrollToTop()}>
+                            Home
+                        </Span>
                     </Li>
                     <Li>
-                        <A href="#nosotras">Nosotras</A>
+                        <span>
+                        <Link to="nosotras" spy={true} smooth={true} offset={50} duration={500}>Nosotras</Link>
+                        </span>
                     </Li>
                     <Li>
-                        <A href="#servicios">Servicios</A>
+                        <span>
+                        <Link to="servicios" spy={true} smooth={true} offset={50} duration={500}>Servicios</Link>
+                        </span>
                     </Li>
                     <Li>
-                        <A href="#contacto">Contacto</A>
+                        <span>
+                        <Link to="contacto" spy={true} smooth={true} offset={50} duration={500}>Contacto</Link>
+                        </span>
                     </Li>
                 </Ul>
             </Nav>
@@ -146,16 +160,24 @@ const Navbar = () => {
            <NavM menu={menu} >                
                 <UlM>
                     <LiM>
-                        <A href="#">Home</A>
+                        <Span onClick={() => animateScroll.scrollToTop()}>
+                            Home
+                        </Span>
                     </LiM>
                     <LiM>
-                        <A href="#">Nosotras</A>
+                        <span>
+                        <Link to="nosotras" spy={true} smooth={true} offset={50} duration={500}>Nosotras</Link>
+                        </span>
                     </LiM>
                     <LiM>
-                        <A href="#">Servicios</A>
+                        <span>
+                        <Link to="servicios" spy={true} smooth={true} offset={50} duration={500}>Servicios</Link>
+                        </span>
                     </LiM>
                     <LiM>
-                        <A href="contacto">Contacto</A>
+                        <span>
+                        <Link to="contacto" spy={true} smooth={true} offset={50} duration={500}>Contacto</Link>
+                        </span>
                     </LiM>
                 </UlM>
             </NavM>

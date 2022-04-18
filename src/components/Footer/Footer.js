@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { FaInstagram } from "react-icons/fa";
-import { FaFacebook } from "react-icons/fa";
+import { FaFacebookSquare } from "react-icons/fa";
+import {Link, animateScroll} from "react-scroll"
 
 const Container = styled.footer`
     margin-top:50px;
@@ -24,18 +25,19 @@ const Social = styled.div`
     justify-content:center;
     align-items:center;
     margin-bottom:15px;
+
 `
 
 const A = styled.a`
     text-decoration:none;
     color: #fff;
-    & > i {
+    & > span {
         font-size:35px;
         padding:6px;
         margin-inline: 15px;
     }
     &:hover{
-            color:#000;
+        color:#000;
     }
 `
 
@@ -43,19 +45,28 @@ const Ul = styled.div`
     display:flex;
     justify-content:center;
     flex-wrap:wrap;
+    margin-bottom:40px;
     gap:80px;
     @media (max-width:500px) {
-        justify-content:space-between;
-        gap:0;
+        flex-direction:column;
+        gap:10px;
     }
 
 `
 
 const Li = styled.li`
     list-style:none;
-
+    &>span:hover {
+        cursor:pointer;
+        color:#000;
+    }
+    &>span {
+        padding:5px;
+        cursor:pointer;
+    }
 `
 const Copy = styled.p`
+    margin-top:-30px;
     bottom:0;
 `
 
@@ -64,29 +75,48 @@ const Footer = () => {
         <Container>
             <Nav>
                 <Social>
-                    <A href="#">
-                        <i>
-                            <FaFacebook/>
-                        </i>
+                    <A href="https://www.facebook.com/equilibrenutricionbienestar" target="_blank">
+                        <span>
+                            <FaFacebookSquare/>
+                        </span>
                     </A>
-                    <A href="#">
-                        <i>
+                    <A href="https://www.instagram.com/equilibre.nutricion" target="_blank">
+                        <span>
                             <FaInstagram/>
-                        </i>
+                        </span>
                     </A>
                 </Social>
                 <Ul>
                     <Li>
-                        <A href="#">Inicio</A>
+                        <span onClick={() => animateScroll.scrollToTop()}>
+                            Home
+                        </span>
                     </Li>
                     <Li>
-                        <A href="#">Nosotras</A>
+                        <span>
+                        <Link to="nosotras" spy={true} smooth={true} offset={50} duration={500}>Nosotras</Link>
+                        </span>
                     </Li>
                     <Li>
-                        <A href="#">Servicios</A>
+                        <span>
+                        <Link to="servicios" spy={true} smooth={true} offset={50} duration={500}>Servicios</Link>
+                        </span>
                     </Li>
                     <Li>
-                        <A href="#">Contacto</A>
+                        <span>
+                        <Link to="contacto" spy={true} smooth={true} offset={50} duration={500}>Contacto</Link>
+                        </span>
+                    </Li>
+                </Ul>
+                <Ul>
+                    <Li>
+                        Duarte Quiros 2178 - Alto Alberdi
+                    </Li>
+                    <Li>
+                        Ituzaingo 791 - Nueva Córdoba
+                    </Li>
+                    <Li>
+                        Tristán Malbran 4177 - Cerro de las rosas
                     </Li>
                 </Ul>
                 
